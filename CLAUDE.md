@@ -4,7 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概述
 
-基于 **Manim CE 0.20.1** 的教学科普动画项目，在 Python 3.x + conda 环境下运行，无依赖文件。
+基于 **Manim CE 0.20.1** 的教学科普动画项目，在 Python 3.x + conda 环境下运行，无额外依赖。
+
+- **GitHub 仓库**：https://github.com/wokaka209/my-manim-repo
+- **README**：`README.md`（英文）、`README_cn.md`（中文）
 
 ## 常用命令
 
