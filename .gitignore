@@ -15,6 +15,10 @@ __pycache__/
 # Trae
 .trae/
 
+# Internal
+.remember/
+需求文档/
+
 # OS
 .DS_Store
 Thumbs.db
