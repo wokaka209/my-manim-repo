@@ -1,29 +1,29 @@
-**[中文版](README_cn.md)** | English
+中文 | **[English](README.md)**
 
-# Manim Teaching Animations
+# Manim 教学动画
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=fff)
 ![Manim](https://img.shields.io/badge/Manim_CE-0.20.1-0A0A0A?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-Course assignment animations. PID control, Git workflows, CNN, backpropagation — all rendered with Manim CE, all in a dark tech theme.
+课程作业动画合集。PID 控制、Git 工作流、CNN、反向传播——全部 Manim CE 渲染，统一深色科技风。
 
-## Table of Contents
+## 目录
 
-- [What is this](#what-is-this)
-- [File structure](#file-structure)
-- [Getting started](#getting-started)
-- [Style guide](#style-guide)
-- [Built with](#built-with)
-- [License](#license)
+- [这是什么](#这是什么)
+- [文件结构](#文件结构)
+- [跑起来](#跑起来)
+- [风格规范](#风格规范)
+- [用到的东西](#用到的东西)
+- [许可协议](#许可协议)
 
-## What is this
+## 这是什么
 
-A bunch of self-contained Manim scripts I made for coursework and presentations. Each `.py` file is a standalone video — no shared modules, no dependency headaches. Run one file, get one video.
+课程作业和演示用的 Manim 动画脚本。每个 `.py` 文件完全独立，不依赖其他模块，跑一个文件出一个视频。
 
-Topics cover control theory (analog and digital PID), version control (Git add/commit/push/branch), deep learning (CNN, backpropagation), and image fusion (direction-aware gradient loss).
+内容覆盖控制理论（模拟和数字 PID）、版本控制（Git add/commit/push/branch）、深度学习（CNN、反向传播）、图像融合（方向感知梯度损失）。
 
-## File structure
+## 文件结构
 
 ```
 manim/
@@ -42,7 +42,7 @@ manim/
 
 每个脚本内部结构都一样：顶部 `COLORS` 字典定义配色，中间 `cn()`/`en()`/`mono()` 是文字快捷函数，底部一个或多个 `Scene` 类是实际画面。
 
-## Getting started
+## 跑起来
 
 ```bash
 # 低质量快速预览（几秒出结果）
@@ -57,7 +57,7 @@ manim -pql pid_control.py PIDScene -n 0,3
 
 需要 Python 3.x 和 [Manim CE](https://docs.manim.community/en/stable/installation.html)。装好 manim 就行，没有额外依赖。
 
-## Style guide
+## 风格规范
 
 所有动画统一用深色科技风，别乱改配色：
 
@@ -69,12 +69,12 @@ manim -pql pid_control.py PIDScene -n 0,3
 
 字体：中文用 SimSun，英文用 Times New Roman，代码用 Monaco。布局不要超出 x ∈ [-6.5, 6.5]、y ∈ [-3.5, 3.8]。
 
-## Built with
+## 用到的东西
 
 - [Manim Community Edition](https://www.manim.community/) — 动画引擎
 - Python 3.x
 - conda 环境管理
 
-## License
+## 许可协议
 
 MIT
