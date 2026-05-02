@@ -30,23 +30,43 @@ manim -pql path/to/file.py ClassName -n 0,3
 2. 工具函数 — `cn()`/`en()`/`mono()` 快捷创建中/英/等宽字体文字，`glass_card()` 创建毛玻璃卡片
 3. 一个或多个继承 `Scene` 的类作为视频场景
 
+### 项目结构
+
+```
+manim/
+├── pid_control/              # PID 控制系列
+│   ├── pid_control.py
+│   ├── digital_pid_control.py
+│   └── docs/
+├── image_fusion/             # 图像融合（毕业设计）
+│   ├── gradient_loss_animation.py
+│   └── docs/
+├── git/                      # Git 工作流
+│   └── git_version_control.py
+├── CNN/                      # 卷积神经网络科普
+│   ├── cnn_pop_video.py
+│   └── video_script.md
+├── backpropagation/          # 反向传播科普
+│   ├── backprop_pop_video.py
+│   └── backprop_cover.py
+└── output_video/             # 最终成品 MP4
+```
+
 ### 两种场景组织方式
 
 | 模式 | 示例 | 说明 |
 |------|------|------|
-| 单类多子场景 | `pid_control.py`, `digital_pid_control.py`, `git_version_control.py`, `CNN/cnn_pop_video.py`, `backpropagation/backprop_pop_video.py` | 一个 Scene 类按时间轴依次构建所有画面 |
-| 多类多场景 | `gradient_loss_animation.py` | 10+ 个独立 Scene 类，每个是一个独立章节 |
-
-`gradient_loss_animation.py` 使用多 Scene 模式时，需逐个渲染每个类，或用脚本串联。
+| 单类多子场景 | `pid_control/pid_control.py`, `CNN/cnn_pop_video.py`, `backpropagation/backprop_pop_video.py` | 一个 Scene 类按时间轴依次构建所有画面 |
+| 多类多场景 | `image_fusion/gradient_loss_animation.py` | 10+ 个独立 Scene 类，每个是一个独立章节 |
 
 ### 主题文件
 
-| 文件 | 主题 |
+| 路径 | 主题 |
 |------|------|
-| `pid_control.py` | 模拟 PID 控制算法 |
-| `digital_pid_control.py` | 数字 PID 控制（采样/保持/离散化） |
-| `git_version_control.py` | Git 工作流程（add/commit/push/branch） |
-| `gradient_loss_animation.py` | 红外-可见光图像融合方向感知梯度损失 |
+| `pid_control/pid_control.py` | 模拟 PID 控制算法 |
+| `pid_control/digital_pid_control.py` | 数字 PID 控制（采样/保持/离散化） |
+| `git/git_version_control.py` | Git 工作流程（add/commit/push/branch） |
+| `image_fusion/gradient_loss_animation.py` | 红外-可见光图像融合方向感知梯度损失 |
 | `CNN/cnn_pop_video.py` | 卷积神经网络科普 |
 | `backpropagation/backprop_pop_video.py` | 反向传播算法科普 |
 | `backpropagation/backprop_cover.py` | 反向传播视频封面 |
