@@ -49,6 +49,8 @@ manim/
 ├── backpropagation/          # 反向传播科普
 │   ├── backprop_pop_video.py
 │   └── backprop_cover.py
+├── algorithms/               # 算法可视化
+│   └── sorting_algorithms.py
 └── output_video/             # 最终成品 MP4
 ```
 
@@ -70,6 +72,7 @@ manim/
 | `CNN/cnn_pop_video.py` | 卷积神经网络科普 |
 | `backpropagation/backprop_pop_video.py` | 反向传播算法科普 |
 | `backpropagation/backprop_cover.py` | 反向传播视频封面 |
+| `algorithms/sorting_algorithms.py` | 六大排序算法可视化（冒泡/选择/插入/归并/快排/堆排） |
 
 ## 全局规范
 

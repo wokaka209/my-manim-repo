@@ -6,7 +6,7 @@
 ![Manim](https://img.shields.io/badge/Manim_CE-0.20.1-0A0A0A?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-课程作业动画合集。PID 控制、Git 工作流、CNN、反向传播——全部 Manim CE 渲染，统一深色科技风。
+课程作业动画合集。PID 控制、Git 工作流、CNN、反向传播、排序算法——全部 Manim CE 渲染，统一深色科技风。
 
 ## 目录
 
@@ -21,22 +21,30 @@
 
 课程作业和演示用的 Manim 动画脚本。每个 `.py` 文件完全独立，不依赖其他模块，跑一个文件出一个视频。
 
-内容覆盖控制理论（模拟和数字 PID）、版本控制（Git add/commit/push/branch）、深度学习（CNN、反向传播）、图像融合（方向感知梯度损失）。
+内容覆盖控制理论（模拟和数字 PID）、版本控制（Git）、深度学习（CNN、反向传播）、图像融合（方向感知梯度损失）、排序算法（冒泡/选择/插入/归并/快排/堆排 + 竞赛对比）。
 
 ## 文件结构
 
 ```
 manim/
-├── pid_control.py              # 模拟 PID 控制，从 P 到 PD 到完整 PID
-├── digital_pid_control.py      # 数字 PID：采样、保持、离散化
-├── git_version_control.py      # Git 工作流可视化
-├── gradient_loss_animation.py  # 红外-可见光图像融合的梯度损失
-├── CNN/
-│   └── cnn_pop_video.py        # 卷积神经网络科普，从卷积核到全连接
-├── backpropagation/
-│   ├── backprop_pop_video.py   # 前向传播 + 反向传播完整推导
-│   └── backprop_cover.py       # 封面图渲染
-├── media/                      # Manim 自动生成，不用管
+├── pid_control/                # PID 控制系列
+│   ├── pid_control.py
+│   ├── digital_pid_control.py
+│   └── docs/
+├── image_fusion/               # 图像融合（毕业设计）
+│   ├── gradient_loss_animation.py
+│   └── docs/
+├── git/                        # Git 工作流
+│   └── git_version_control.py
+├── CNN/                        # 卷积神经网络科普
+│   ├── cnn_pop_video.py
+│   └── video_script.md
+├── backpropagation/            # 反向传播科普
+│   ├── backprop_pop_video.py
+│   └── backprop_cover.py
+├── algorithms/                 # 算法可视化
+│   └── sorting_algorithms.py   # 六大排序算法 + 竞赛
+├── media/                      # Manim 自动生成缓存
 └── output_video/               # 最终成品 MP4
 ```
 
@@ -46,13 +54,13 @@ manim/
 
 ```bash
 # 低质量快速预览（几秒出结果）
-manim -pql pid_control.py PIDScene
+manim -pql pid_control/pid_control.py PIDControlVideo
 
 # 高质量渲染（慢，适合最终输出）
-manim -pqh pid_control.py PIDScene
+manim -pqh pid_control/pid_control.py PIDControlVideo
 
 # 只渲染前 3 秒，调试用
-manim -pql pid_control.py PIDScene -n 0,3
+manim -pql CNN/cnn_pop_video.py CNNPopularizationVideo -n 0,3
 ```
 
 需要 Python 3.x 和 [Manim CE](https://docs.manim.community/en/stable/installation.html)。装好 manim 就行，没有额外依赖。

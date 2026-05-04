@@ -6,7 +6,7 @@
 ![Manim](https://img.shields.io/badge/Manim_CE-0.20.1-0A0A0A?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-Course assignment animations. PID control, Git workflows, CNN, backpropagation — all rendered with Manim CE, all in a dark tech theme.
+Course assignment animations. PID control, Git workflows, CNN, backpropagation, sorting algorithms — all rendered with Manim CE, all in a dark tech theme.
 
 ## Table of Contents
 
@@ -21,23 +21,31 @@ Course assignment animations. PID control, Git workflows, CNN, backpropagation �
 
 A bunch of self-contained Manim scripts I made for coursework and presentations. Each `.py` file is a standalone video — no shared modules, no dependency headaches. Run one file, get one video.
 
-Topics cover control theory (analog and digital PID), version control (Git add/commit/push/branch), deep learning (CNN, backpropagation), and image fusion (direction-aware gradient loss).
+Topics cover control theory (analog and digital PID), version control (Git), deep learning (CNN, backpropagation), image fusion (direction-aware gradient loss), and sorting algorithms (bubble, selection, insertion, merge, quick, heap sort with race comparison).
 
 ## File structure
 
 ```
 manim/
-├── pid_control.py              # 模拟 PID 控制，从 P 到 PD 到完整 PID
-├── digital_pid_control.py      # 数字 PID：采样、保持、离散化
-├── git_version_control.py      # Git 工作流可视化
-├── gradient_loss_animation.py  # 红外-可见光图像融合的梯度损失
-├── CNN/
-│   └── cnn_pop_video.py        # 卷积神经网络科普，从卷积核到全连接
-├── backpropagation/
-│   ├── backprop_pop_video.py   # 前向传播 + 反向传播完整推导
-│   └── backprop_cover.py       # 封面图渲染
-├── media/                      # Manim 自动生成，不用管
-└── output_video/               # 最终成品 MP4
+├── pid_control/                # PID control series
+│   ├── pid_control.py
+│   ├── digital_pid_control.py
+│   └── docs/
+├── image_fusion/               # Image fusion (graduation project)
+│   ├── gradient_loss_animation.py
+│   └── docs/
+├── git/                        # Git workflow
+│   └── git_version_control.py
+├── CNN/                        # Convolutional neural networks
+│   ├── cnn_pop_video.py
+│   └── video_script.md
+├── backpropagation/            # Backpropagation
+│   ├── backprop_pop_video.py
+│   └── backprop_cover.py
+├── algorithms/                 # Algorithm visualizations
+│   └── sorting_algorithms.py   # 6 sorting algorithms + race
+├── media/                      # Manim auto-generated cache
+└── output_video/               # Final rendered MP4s
 ```
 
 每个脚本内部结构都一样：顶部 `COLORS` 字典定义配色，中间 `cn()`/`en()`/`mono()` 是文字快捷函数，底部一个或多个 `Scene` 类是实际画面。
@@ -45,14 +53,14 @@ manim/
 ## Getting started
 
 ```bash
-# 低质量快速预览（几秒出结果）
-manim -pql pid_control.py PIDScene
+# Low quality preview (fast)
+manim -pql pid_control/pid_control.py PIDControlVideo
 
-# 高质量渲染（慢，适合最终输出）
-manim -pqh pid_control.py PIDScene
+# High quality render (slow)
+manim -pqh pid_control/pid_control.py PIDControlVideo
 
-# 只渲染前 3 秒，调试用
-manim -pql pid_control.py PIDScene -n 0,3
+# Render first 3 seconds only
+manim -pql CNN/cnn_pop_video.py CNNPopularizationVideo -n 0,3
 ```
 
 需要 Python 3.x 和 [Manim CE](https://docs.manim.community/en/stable/installation.html)。装好 manim 就行，没有额外依赖。
